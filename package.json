@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "playwright test"
+    "test": "playwright test",
+    "docker-test": "xvfb-run -- playwright test"
   },
   "keywords": [],
   "author": "",

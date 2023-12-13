@@ -1,7 +1,12 @@
 import { Page } from "@playwright/test";
-import { randomInt } from "crypto";
 
 export async function takeRandomBet(page: Page) {
-    const randomMatch = `//div[contains(@data-testid, 'sportBaseEvent')][${randomInt(6)}]`
-    await page.locator(randomMatch).locator(`//div[contains(@data-testid,'factorValue')][${randomInt(6)}]`).click(); // Выбор случайного эвента и ставки
+    const randomIndex = randomNum(1, 5);
+    const randomMatch = `//div[contains(@data-testid, 'sportBaseEvent')][${randomIndex}]`
+    await page.locator(`${randomMatch}//div[contains(@data-testid,'factorValue')][${randomIndex}]`).click(); // Выбор случайного эвента и ставки
+    await page.waitForTimeout(500);
+}
+
+export function randomNum(min: number, max: number): number {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }

@@ -6,4 +6,4 @@ COPY . /test
 # Установка зависимостей
 RUN npm ci 
 
-CMD [ "npm", "run", "test" ]
+CMD [ "npm", "run", "docker-test" ]
