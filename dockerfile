@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/playwright:v1.40.1-jammy AS base
+FROM mcr.microsoft.com/playwright:v1.40.1-jammy
 
 WORKDIR /test
 COPY . /test
